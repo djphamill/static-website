@@ -16,38 +16,12 @@
 <div id="ggb-element"></div> 
 
 <!-- The applet -->
-<script type="text/javascript">
-    var parameters = {
-        "id":"applet",
-        "material_id":"j6sx6sn3",
-        "scaleContainerClass":"col-sm-9",
-        "autoHeight":true,
-        "prerelease":false,
-        "showToolBar":false,
-        "borderColor":"#FFFFFF",
-        "showMenuBar":false,
-        "showAlgebraInput":false,
-        "showResetIcon":true,
-        "enableLabelDrags":false,
-        "enableShiftDragZoom":false,
-        "enableRightClick":false,
-        "capturingThreshold":null,
-        "showToolBarHelp":false,
-        "errorDialogsActive":false,
-        "useBrowserForJS":true,
-        "showLogging":"true",            
-        "perspective":"Graphing",
-        "showResetIcon":false
-    };
-
-    
-    var applet = new GGBApplet('5.0', parameters);
-    //  when used with Math Apps Bundle, uncomment this:
-    //  applet.setHTML5Codebase('GeoGebra/HTML5/5.0/web/');
-
-    window.onload = function() {
-        applet.inject('applet_container');
-    }    
+<script>  
+    var params = {"appName": "graphing", "width": 800, "height": 600, "showToolBar": true, "showAlgebraInput": true, "showMenuBar": true };
+    var applet = new GGBApplet(params, true);
+    window.addEventListener("load", function() { 
+        applet.inject('ggb-element');
+    });
 </script>
 
 </body>
