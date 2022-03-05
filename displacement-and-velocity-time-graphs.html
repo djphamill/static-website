@@ -11,11 +11,24 @@
 </head>
 <body>
 
-<h1>Range Task</h1>
+<h1>Distplacement-Time and Velocity-Time Graphs</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            Below is a displacement-time graph. Draw its corresponding velocity-time graph. 
+        </div>
+        <div class="col-sm">
+            <div id="ggb-element-01"></div>             
+        </div>
+        <div class="col-sm">
+            <div id="ggb-element-02"></div>  
+    </div>
+</div>
+  </div>
 <p>Adjust the initial speed and angle of projection so that the projectile has a range of 50m.</p>
-<div id="ggb-element"></div> 
 
-<!-- The applet -->
+
+<!-- The dispalcement0time graph-->
 <script>  
     var params = {
         "id" : "app1",
@@ -43,20 +56,12 @@
         }
     };
 
-    var applet = new GGBApplet(params, true);
+    var appplet1 = new GGBApplet(params, true);
 
     window.addEventListener("load", function() { 
-        applet.inject('ggb-element');
+        applet1.inject('ggb-element-01');
     });
 </script>
-
-<form>    
-    <label for="t">Angle:</label>
-    <input type="range" id="t" name="vol" min="0" max="1.5707" step="0.001" value="0.314" onmousemove="app1.setValue('t', t.value)">
-    
-    <label for="initialSpeed">Inital speed:</label>
-    <input type="range" id="initialSpeed" name="vol" min="0" max="20" step="0.1" value="1" onmousemove="app1.setValue('initialSpeed', initialSpeed.value)">
-</form>
 
 </body>
 </html> 
