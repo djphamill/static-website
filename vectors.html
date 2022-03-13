@@ -3,7 +3,7 @@
 <head>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta charset="utf-8"/>
-<title>Vectors</title>
+<title>djphamill GitHub Website</title>
 <!-- My style -->
 <link rel="stylesheet" href="style.css">
 
@@ -20,16 +20,30 @@
 </head>
 <body>
 
-<h1>Distplacement-Time and Velocity-Time Graphs</h1>
+<h1>Vector Arithmetic</h1>
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            
+            <div id="questions">
+                Move the point \(U\) such that \(\mathbf{u}+\mathbf{v}\) is
+                <ol>
+                    <li>
+                        \begin{pmatrix} 2 \\ 0\end{pmatrix}
+                    </li>
+                    <li>
+                        \begin{pmatrix} 1 \\ 1\end{pmatrix}
+                    </li>
+                    <li>
+                        has an angle of \(\frac{\pi}{2}\) radians to the right-horizontal.
+                    </li>
+                </ol>
+            </div>
             <div>
-                <button class="checkButton" type="button" onclick="aaplet2. ">
+                <button class="checkButton" type="button" onclick="answers()">
                     Check
                 </button>
             </div>
+            <div id="answer"></div>
         </div>
         <div class="col-sm">
             <div id="ggb-element-01"></div>             
@@ -40,12 +54,13 @@
     </div>
 </div>
 
-<!-- The dispalcement-time graph-->
+<!-- Vectors -->
 
 <!-- The applet -->
 <script>  
     var params1 = {
         "id" : "app",
+        "material_id":"ydcdzexy",
         "appName": "classic", 
         "width": 400, 
         "height": 400, 
@@ -55,45 +70,47 @@
         "enableRightClick": false,
         "enableLabelDrags": false,
         "allowRescaling": false,
-        "enableShiftDragZoom": false,
+        "enableShiftDragZoom": true,
         "errorDialogsActive": false,
         "showResetIcon": true,
         "perspective":"Graphing",
         "showToolBarHelp":false,
         "appletOnLoad": function(app){
-            app.setCoordSystem(-5, 60, -5, 60);
-            app.setMode(73)
-        }
-    };
-    var params2 = {
-        "id" : "app",
-        "appName": "classic",
-        "width": 400, 
-        "height": 400, 
-        "showToolBar": false, 
-        "showAlgebraInput": false, 
-        "showMenuBar": false,
-        "enableRightClick": false,
-        "enableLabelDrags": false,
-        "allowRescaling": false,
-        "enableShiftDragZoom": false,
-        "errorDialogsActive": false,
-        "showResetIcon": true,
-        "perspective":"Graphing",
-        "showToolBarHelp":false,
-        "appletOnLoad": function(app){
-            app.setCoordSystem(-5, 60, -5, 60);
-            app.setMode(73)
+            app.setCoordSystem(-5, 5, -5, 5);
         }
     };
 
     var applet1 = new GGBApplet(params1, true);
-    var applet2 = new GGBApplet(params2, true);
 
     window.addEventListener("load", function() { 
         applet1.inject('ggb-element-01');
-        applet2.inject('ggb-element-02');
     });
+
+    function answers(){
+        // Begin formatting answer (with MathJax)
+        var answer = `\\(`;
+        
+        // Get values of vectors
+        let ux = app.getValue("x(U)");
+        let uy = app.getValue("y(U)");
+
+        let vx = app.getValue("x(V)");
+        let vy = app.getValue("y(V)");
+
+        let wx = app.getValue("x(W)");
+        let wy = app.getValue("y(W)");
+        
+        // Build string for answer
+        
+        answer = answer.concat(`\\begin{pmatrix} ${ ux } \\\\ ${ uy } \\end{pmatrix} + \\begin{pmatrix} ${ vx } \\\\ ${ vy } \\end{pmatrix} = \\begin{pmatrix} ${ wx } \\\\ ${ wy } \\end{pmatrix}`);
+        answer = answer.concat('\\)');
+
+        // Display answer
+        document.getElementById("answer").innerHTML = answer;
+
+        // Re-typeset maths
+        MathJax.typeset();
+    }
 </script>
 
 
