@@ -122,7 +122,10 @@ main {
     float: right;
     font-size: 28px;
     font-weight: bold;
+<<<<<<< HEAD
     text-align: right;
+=======
+>>>>>>> c13a1d9e6caea6162f2e2a902b9e9a72780ff848
   }
   
   .close:hover,
