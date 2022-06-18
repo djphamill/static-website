@@ -8,9 +8,9 @@ main {
 }
 
 
-.col, .col-4 {
-  /* border: black solid 2px; */
-}
+/* .col, .col-4 {
+  border: black solid 2px;
+} */
 
 .tile {
   text-align: center;
