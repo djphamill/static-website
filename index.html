@@ -97,9 +97,8 @@
 
             fetch("/about.txt")
                 .then(response => response.text())
-                .then(console.log(response))
                 .then(console.log("text is saved."))
-                .then(text => document.getElementById("aboutText").textContent = text);
+                .then(text => document.getElementById("aboutText").innerHTML = text);
 
         </script>
     </body>
