@@ -1,23 +1,26 @@
 main {
-    font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .main-title {
-    text-align: center;
-    font-size: 68pt;
+  text-align: center;
+  font-size: 68pt;
 }
 
 
 .col, .col-4 {
-    /* border: black solid 2px; */
+  /* border: black solid 2px; */
 }
 
 .tile {
-    text-align: center;
-    font-size: medium;
+  text-align: center;
+  font-size: medium;
+  border-radius: 25px;
 }
 
 .tile:hover {
+  background-color: gray;
+  
 }
 
 .row {
@@ -34,6 +37,10 @@ main {
 
   .jumbotron{
       background-color: white;
+  }
+
+  .profile-pic {
+    border-radius: 25px;
   }
 
 
